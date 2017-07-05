@@ -62,3 +62,19 @@ document.addEventListener('keydown', function(e) {
     }
   }
 })
+
+// BONUS
+var seq = [];
+var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+document.addEventListener('keydown', function(e) {
+  seq.push(e.keyCode);
+  while (seq.length < 11) {
+    for (var i = 0; i < 10; i++) {
+      if (seq[i] !== konamiCode[i]) {
+        return false;
+      }
+    }
+    alert("YOU ARE AN EVENT HANDLER GURUUUUUUUUU!");
+    return true;
+  }
+})
